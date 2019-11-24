@@ -14,7 +14,7 @@ OBJO = ./obj/main.o \
 	
 CFLGS = -std=c11 -Wall -Wextra -Wpedantic -Werror 
 
-all: install uninstall
+all: install clean
 
 install:
 	@cd libmx && make -f Makefile install
@@ -26,11 +26,12 @@ install:
 
 uninstall:
 	@cd libmx && make -f Makefile uninstall
+	@rm -rf $(NAME)
+	
+
+clean:
+	@cd libmx && make -f Makefile clean
 	@rm -rf $(OBJO) $(SRC) $(HEADTMP)
 	@rm -rf ./obj
 
-clean: uninstall
-	@cd libmx && make -f Makefile clean
-	@rm -rf $(NAME)
-
-reinstall: clean all
+reinstall: uninstall clean all

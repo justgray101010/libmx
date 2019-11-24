@@ -78,5 +78,9 @@ char *mx_strncpy(char *dst, const char *src, int len);
 int mx_strncmp(const char *s1, const char *s2, int n);
 int mx_read_line(char **lineptr, int buf_size, char delim, const int fd);
 int mx_atoi(const char *str);
+int mx_data_processing(island **arr, int n, const char *island1, const char *island2);
+int mx_get_island_arr(island **arr, int number, char *argv[]);
+void mx_show_all_paths(island **arr, int number, int max);
+void mx_print_paths(int i, int isl, int number, char ***path, island **arr, int *d);
 
 #endif

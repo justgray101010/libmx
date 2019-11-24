@@ -1,17 +1,21 @@
 #include "libmx.h"
 
-int mx_count_words(const char *str, const char delim) {
+int mx_count_words(const char *str, char c) {
+    int word = 0;
+    int words = 0;
 
-    char *editedstr = mx_del_extra_spaces(str);
-    int counter = 0;
-
-    if (editedstr) {
-        counter++;
-        while (*editedstr) {
-            if (*editedstr == delim)
-                counter++;
-            editedstr++;
-        }
+    if (!str) {
+        return -1;
     }
-    return counter;
+    while (*str) {
+        if (*str == c) {
+            word = 0;
+        }
+        else if (!word) {
+            word = 1;
+            words++;
+        }
+        str++;
+    }
+    return words;
 }

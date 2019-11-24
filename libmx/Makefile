@@ -59,7 +59,11 @@ SRCS = src/mx_binary_search.c \
 	src/mx_strndup.c \
 	src/mx_strncmp.c \
 	src/mx_read_line.c \
-	src/mx_atoi.c
+	src/mx_atoi.c \
+	src/mx_get_island_arr.c \
+	src/mx_data_processing.c \
+	src/mx_show_all_paths.c \
+	src/mx_print_paths.c
 
 OUT = mx_binary_search.o \
 	mx_bubble_sort.o \
@@ -120,7 +124,11 @@ OUT = mx_binary_search.o \
 	mx_strndup.o \
 	mx_strncmp.o \
 	mx_read_line.o \
-	mx_atoi.o
+	mx_atoi.o \
+	mx_get_island_arr.o \
+	mx_data_processing.o \
+	mx_show_all_paths.o \
+	mx_print_paths.o
 
 OBJ_DIR = obj
 INC = inc/libmx.h
